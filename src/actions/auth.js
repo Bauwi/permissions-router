@@ -1,3 +1,4 @@
+// Action creators
 export const login = user => ({
   type: "LOGIN",
   user
@@ -15,6 +16,7 @@ export const decrementStep = () => ({
   type: "DECREMENT_STEP"
 });
 
+// Middlewares
 export const startLogin = user => dispatch => {
   localStorage.setItem("user", JSON.stringify(user));
   return dispatch(login(user));

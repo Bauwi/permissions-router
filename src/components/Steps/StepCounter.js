@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 import { incrementStep, decrementStep } from "../../actions/auth";
-import steps from "../../mock/steps";
 
 const Counter = styled.div`
   align-items: center;

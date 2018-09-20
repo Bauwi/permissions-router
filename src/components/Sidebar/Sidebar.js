@@ -38,19 +38,9 @@ const NavBar = styled.nav`
   flex-direction: column;
 `;
 
-// const Link = styled(NavLink)`
-// &.${isActive} {
-//   color: red;
-// } {
-//     background: red;
-//   }
-// `;
-const NavItemContainer = styled.div``;
-
 export class SidebarComp extends Component {
   renderSteps = () => {
     const {
-      authorizedStep,
       level,
       role: { name, hasStep }
     } = this.props;
@@ -64,6 +54,7 @@ export class SidebarComp extends Component {
       if (!hasStep) return;
       return (
         <NavItem
+          key={i}
           to={`/steps/${name}/${i}`}
           shouldBeAuthorized={[i]}
           level={level}

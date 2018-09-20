@@ -10,7 +10,7 @@ export const PublicRoute = ({
   landPage,
   ...rest
 }) => {
-  console.log(landPage);
+  // logged users redirection
   return (
     <Route
       {...rest}

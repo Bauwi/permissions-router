@@ -1,12 +1,12 @@
-//PrivateRoute component is used to manage private only pages
+//PrermissionRoute component is used to manage private only pages
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 import styled from "styled-components";
 
-import Steps from "./Steps/Steps";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Header from "../components/Header/Header";
+
 import steps from "../mock/steps";
 
 const Wrapper = styled.div`

@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 
 export class Practice extends Component {
   render() {
-    console.log(this.props);
     const { activityId, practiceId } = this.props.match.params;
     return (
       <div
