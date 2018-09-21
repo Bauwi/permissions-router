@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { ThemeProvider } from "styled-components";
 import ReactDOM from "react-dom";
 import "./App.css";
@@ -10,8 +10,6 @@ import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 
 import Loader from "./components/Loader/Loader";
-
-const auth = localStorage.getItem("auth");
 
 const store = configureStore();
 

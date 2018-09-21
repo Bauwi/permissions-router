@@ -54,8 +54,8 @@ export class Login extends Component {
     const user = {
       nom: "Pere",
       Prenom: "Ubu",
-      level: parseInt(this.state.permission),
-      step: parseInt(this.state.step)
+      level: parseInt(this.state.permission, 10),
+      step: parseInt(this.state.step, 10)
     };
     this.props.startLogin(user);
   };

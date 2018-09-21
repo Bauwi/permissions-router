@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 import steps from "../../mock/steps";
-import fakePermissions from "../../mock/fakePermissions";
 
 const BaseNavItem = styled(NavLink)`
   border: 3px solid transparent;
@@ -51,7 +50,7 @@ export class SidebarComp extends Component {
       : false;
 
     return Array.from(Array(stepMax + 1).keys()).map((el, i) => {
-      if (!hasStep) return;
+      if (!hasStep) return null;
       return (
         <NavItem
           key={i}
@@ -66,11 +65,10 @@ export class SidebarComp extends Component {
 
   render() {
     const {
-      level,
-      userStep,
-      role: { name }
+      level
+      // userStep,
     } = this.props;
-    const stepMax = steps[level].stepMax;
+    // const stepMax = steps[level].stepMax;
     const isInStep = steps[level].hasStep
       ? steps[level].hasStep > steps[level].stepMax
       : false;
