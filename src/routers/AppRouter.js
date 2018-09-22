@@ -11,18 +11,19 @@ import StepRoute from "./Steps/StepRoute";
 
 //Custom permission routes
 import PrivateRoute from "./Private/PrivateRoute";
-import EmployeeRoute from "./Private/EmployeeRoute";
+import UserRoute from "./Private/UserRoute";
 import ProviderRoute from "./Private/ProviderRoute";
 import CompanyRoute from "./Private/CompanyRoute";
 import AdminRoute from "./Private/AdminRoute";
 
 import ConfirmEmail from "../components/ConfirmEmail";
 
-//Employee components
-import EmployeeHome from "../components/Employee/Home";
-import Activity from "../components/Employee/Activity";
-import Practice from "../components/Employee/Practice";
-import Profile from "../components/Employee/Profile";
+//User components
+import UserHome from "../components/User/Home";
+import Activity from "../components/User/Activity";
+import Practice from "../components/User/Practice";
+import Profile from "../components/User/Profile";
+import Create from "../components/User/Create/Create";
 
 //Provider components
 import ProviderHome from "../components/Provider/Home";
@@ -34,9 +35,9 @@ import CompanyHome from "../components/Company/Home";
 import AdminHome from "../components/Admin/Home";
 
 //Steps
-import StepEmployee0 from "../components/Steps/Step0Employee";
-import StepEmployee1 from "../components/Steps/Step1Employee";
-import StepEmployee2 from "../components/Steps/Step2Employee";
+import StepUser0 from "../components/Steps/Step0User";
+import StepUser1 from "../components/Steps/Step1User";
+import StepUser2 from "../components/Steps/Step2User";
 
 import StepProvider0 from "../components/Steps/StepProvider0";
 import StepProvider1 from "../components/Steps/StepProvider1";
@@ -58,9 +59,9 @@ const AppRouter = () => (
 
         {/*****************************************************************/
         /***************** ***** EMPLOYEE STEPS ******** *****************/}
-        <StepRoute path="/steps/employee/0" component={StepEmployee0} />
-        <StepRoute path="/steps/employee/1" component={StepEmployee1} />
-        <StepRoute path="/steps/employee/2" component={StepEmployee2} />
+        <StepRoute path="/steps/user/0" component={StepUser0} />
+        <StepRoute path="/steps/user/1" component={StepUser1} />
+        <StepRoute path="/steps/user/2" component={StepUser2} />
 
         {/*****************************************************************/
         /***************** ***** PROVIDER STEPS ******** *****************/}
@@ -75,18 +76,18 @@ const AppRouter = () => (
 
         {/*****************************************************************/
         /***************** ***** EMPLOYEE ROUTES ******** ****************/}
-        <EmployeeRoute path="/employee" component={EmployeeHome} exact />
-        <EmployeeRoute
-          path="/app/employee/activities/:activityId"
-          component={Activity}
-          exact
+        <UserRoute
+          path="/app/user/activities/:id/practices/create"
+          component={Create}
         />
-        <EmployeeRoute
-          path="/app/employee/activities/:activityId/practices/:practiceId"
+        <UserRoute path="/user" component={UserHome} exact />
+        <UserRoute path="/app/user/activities/:id" component={Activity} exact />
+        <UserRoute
+          path="/app/user/activities/:id/practices/:practiceId"
           component={Practice}
           exact
         />
-        <EmployeeRoute path="/app/employee/profile" component={Profile} />
+        <UserRoute path="/app/employee/profile" component={Profile} />
 
         {/*****************************************************************/
         /***************** ***** PROVIDER ROUTES ******** ****************/}

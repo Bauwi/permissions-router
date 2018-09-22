@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 
-import steps from "../permissions/permissions";
+import steps from "./permissions/permissions";
 
 export const PublicRoute = ({
   isAuthenticated,

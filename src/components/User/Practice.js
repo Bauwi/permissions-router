@@ -3,11 +3,8 @@ import { withRouter } from "react-router-dom";
 
 export class Practice extends Component {
   render() {
-    const { activityId, practiceId } = this.props.match.params;
-    return (
-      <div
-      >{`/app/employee/activities/${activityId}/practices/${practiceId}`}</div>
-    );
+    const { id, practiceId } = this.props.match.params;
+    return <div>{`/app/user/activities/${id}/practices/${practiceId}`}</div>;
   }
 }
 

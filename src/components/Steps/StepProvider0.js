@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-export default class StepCompany0 extends Component {
+export default class StepProvider0 extends Component {
   render() {
-    return <div>StepCompany0</div>;
+    return <div>StepProvider0</div>;
   }
 }

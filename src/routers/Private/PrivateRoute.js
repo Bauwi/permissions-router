@@ -2,7 +2,7 @@ import React from "react";
 import PermissionRoute from "../PermissionRoute";
 
 // PrivateRoute layout
-import permissions from "../../permissions/permissions";
+import permissions from "../permissions/permissions";
 
 export const PrivateRoute = ({ component: Component, ...rest }) => {
   return (

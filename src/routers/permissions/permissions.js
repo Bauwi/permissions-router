@@ -9,11 +9,11 @@ export default {
   },
   1: {
     id: 1,
-    name: "employee",
+    name: "user",
     authorized: [1, 3, 4],
     hasStep: true,
     stepMax: 2,
-    landPage: "/employee"
+    landPage: "/user"
   },
   2: {
     id: 2,
@@ -28,7 +28,7 @@ export default {
     name: "company",
     authorized: [3, 4],
     hasStep: false,
-    stepMax: 3,
+    stepMax: 0,
     landPage: "/app/company"
   },
   4: {
@@ -36,7 +36,7 @@ export default {
     name: "admin",
     authorized: [4],
     hasStep: false,
-    stepMax: 3,
+    stepMax: 0,
     landPage: "/app/admin"
   }
 };

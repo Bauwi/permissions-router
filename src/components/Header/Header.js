@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { withTheme } from "styled-components";
 
-import permissions from "../../permissions/permissions";
+import permissions from "../../routers/permissions/permissions";
 import { startLogout } from "../../actions/auth";
 import StepCounter from "../Steps/StepCounter";
 

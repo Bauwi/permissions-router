@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-import steps from "../../permissions/permissions";
+import steps from "../../routers/permissions/permissions";
 
 const BaseNavItem = styled(NavLink)`
   border: 3px solid transparent;
@@ -85,20 +85,28 @@ export class SidebarComp extends Component {
             /app/admin
           </NavItem>
           <NavItem
-            to="/app/employee/activities/25"
+            to="/app/user/activities/13/practices/create"
             level={level}
             shouldBeAuthorized={[1, 3, 4]}
             isInStep={isInStep}
           >
-            /app/employee/activities/25
+            /app/user/activities/13/practices/create
           </NavItem>
           <NavItem
-            to="/app/employee/activities/25/practices/12"
+            to="/app/user/activities/25"
             level={level}
             shouldBeAuthorized={[1, 3, 4]}
             isInStep={isInStep}
           >
-            /app/employee/activities/25/practices/12
+            /app/user/activities/25
+          </NavItem>
+          <NavItem
+            to="/app/user/activities/25/practices/12"
+            level={level}
+            shouldBeAuthorized={[1, 3, 4]}
+            isInStep={isInStep}
+          >
+            /app/user/activities/25/practices/12
           </NavItem>
 
           <NavItem to="/login" level={level} shouldBeAuthorized={[]}>
