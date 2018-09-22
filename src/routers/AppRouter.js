@@ -10,11 +10,11 @@ import Login from "../components/Login/Login";
 import StepRoute from "./Steps/StepRoute";
 
 //Custom permission routes
-import Level0 from "./Private/Level0";
-import Level1 from "./Private/Level1";
-import Level2 from "./Private/Level2";
-import Level3 from "./Private/Level3";
-import Level4 from "./Private/Level4";
+import PrivateRoute from "./Private/PrivateRoute";
+import EmployeeRoute from "./Private/EmployeeRoute";
+import ProviderRoute from "./Private/ProviderRoute";
+import CompanyRoute from "./Private/CompanyRoute";
+import AdminRoute from "./Private/AdminRoute";
 
 import ConfirmEmail from "../components/ConfirmEmail";
 
@@ -71,34 +71,34 @@ const AppRouter = () => (
 
         {/*****************************************************************/
         /***************** ***** CONFIRM EMAIL ******** ******************/}
-        <Level0 path="/confirm-email" component={ConfirmEmail} />
+        <PrivateRoute path="/confirm-email" component={ConfirmEmail} />
 
         {/*****************************************************************/
         /***************** ***** EMPLOYEE ROUTES ******** ****************/}
-        <Level1 path="/employee" component={EmployeeHome} exact />
-        <Level1
+        <EmployeeRoute path="/employee" component={EmployeeHome} exact />
+        <EmployeeRoute
           path="/app/employee/activities/:activityId"
           component={Activity}
           exact
         />
-        <Level1
+        <EmployeeRoute
           path="/app/employee/activities/:activityId/practices/:practiceId"
           component={Practice}
           exact
         />
-        <Level1 path="/app/employee/profile" component={Profile} />
+        <EmployeeRoute path="/app/employee/profile" component={Profile} />
 
         {/*****************************************************************/
         /***************** ***** PROVIDER ROUTES ******** ****************/}
-        <Level2 path="/provider" component={ProviderHome} />
+        <ProviderRoute path="/provider" component={ProviderHome} />
 
         {/*****************************************************************/
         /****************** ***** ADMIN ROUTES ******** ******************/}
-        <Level3 path="/app/company" component={CompanyHome} />
+        <CompanyRoute path="/app/company" component={CompanyHome} />
 
         {/*****************************************************************/
         /*************** ***** SUPER ADMIN ROUTES ******** ***************/}
-        <Level4 path="/app/admin" component={AdminHome} />
+        <AdminRoute path="/app/admin" component={AdminHome} />
 
         {/*****************************************************************/
         /***************** ***** NOT FOUND PAGE ******** *****************/}

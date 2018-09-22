@@ -1,10 +1,10 @@
 import React from "react";
 import PermissionRoute from "../PermissionRoute";
 
-// Level0 layout
-import permissions from "../../mock/steps";
+// PrivateRoute layout
+import permissions from "../../permissions/permissions";
 
-export const Level0 = ({ component: Component, ...rest }) => {
+export const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
     <PermissionRoute
       permission={permissions[0]}
@@ -13,4 +13,4 @@ export const Level0 = ({ component: Component, ...rest }) => {
   );
 };
 
-export default Level0;
+export default PrivateRoute;

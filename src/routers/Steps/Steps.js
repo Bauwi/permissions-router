@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 
-import steps from "../../mock/steps";
+import steps from "../../permissions/permissions";
 
 export const Steps = ({ userStep, role }) => {
   return <Redirect to={`/steps/${role.name}/${userStep}`} />;

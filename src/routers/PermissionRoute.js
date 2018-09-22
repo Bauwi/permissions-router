@@ -7,7 +7,7 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Header from "../components/Header/Header";
 
-import steps from "../mock/steps";
+import steps from "../permissions/permissions";
 
 const Wrapper = styled.div`
   display: flex;

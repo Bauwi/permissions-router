@@ -2,14 +2,15 @@ import React from "react";
 import PermissionRoute from "../PermissionRoute";
 
 // Level13layout
-import fakePermissions from "../../mock/fakePermissions";
-export const Level0 = ({ component: Component, ...rest }) => {
+import permissions from "../../permissions/permissions";
+
+export const CompanyRoute = ({ component: Component, ...rest }) => {
   return (
     <PermissionRoute
-      permission={fakePermissions[3]}
+      permission={permissions[3]}
       component={props => <Component {...props} />}
     />
   );
 };
 
-export default Level0;
+export default CompanyRoute;

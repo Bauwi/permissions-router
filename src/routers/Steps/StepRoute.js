@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Route, Redirect, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
-import steps from "../../mock/steps";
+import steps from "../../permissions/permissions";
 
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Header from "../../components/Header/Header";

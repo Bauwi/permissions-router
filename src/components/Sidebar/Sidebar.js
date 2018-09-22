@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-import steps from "../../mock/steps";
+import steps from "../../permissions/permissions";
 
 const BaseNavItem = styled(NavLink)`
   border: 3px solid transparent;
