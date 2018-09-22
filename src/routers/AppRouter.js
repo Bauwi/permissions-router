@@ -28,10 +28,10 @@ import Profile from "../components/Employee/Profile";
 import ProviderHome from "../components/Provider/Home";
 
 //Admin components
-import Level3Component from "../components/Levels/Level3";
+import CompanyHome from "../components/Company/Home";
 
 //Super Admin components
-import Level4Component from "../components/Levels/Level4";
+// import Level4Component from "../components/Levels/Level4";
 
 //Steps
 import StepEmployee0 from "../components/Steps/Step0Employee";
@@ -52,29 +52,28 @@ const AppRouter = () => (
     <div>
       <Switch>
         {/*****************************************************************/
-        /*****************************************************************/
         /****************** ***** PUBLIC ROUTES ******** *****************/}
         <PublicRoute path="/" component={Home} exact />
         <PublicRoute path="/login" component={Login} />
+
         {/*****************************************************************/
-        /*****************************************************************/
         /***************** ***** EMPLOYEE STEPS ******** *****************/}
         <StepRoute path="/steps/employee/0" component={StepEmployee0} />
         <StepRoute path="/steps/employee/1" component={StepEmployee1} />
         <StepRoute path="/steps/employee/2" component={StepEmployee2} />
+
         {/*****************************************************************/
-        /*****************************************************************/
         /***************** ***** PROVIDER STEPS ******** *****************/}
         <StepRoute path="/steps/provider/0" component={StepProvider0} />
         <StepRoute path="/steps/provider/1" component={StepProvider1} />
         <StepRoute path="/steps/provider/2" component={StepProvider2} />
         <StepRoute path="/steps/provider/3" component={StepProvider3} />
+
         {/*****************************************************************/
-        /*****************************************************************/
         /***************** ***** CONFIRM EMAIL ******** ******************/}
         <Level0 path="/confirm-email" component={ConfirmEmail} />
+
         {/*****************************************************************/
-        /*****************************************************************/
         /***************** ***** EMPLOYEE ROUTES ******** ****************/}
         <Level1 path="/employee" component={EmployeeHome} exact />
         <Level1
@@ -88,22 +87,23 @@ const AppRouter = () => (
           exact
         />
         <Level1 path="/app/employee/profile" component={Profile} />
+
         {/*****************************************************************/
-        /*****************************************************************/
         /***************** ***** PROVIDER ROUTES ******** ****************/}
         <Level2 path="/provider" component={ProviderHome} />
+
         {/*****************************************************************/
-        /*****************************************************************/
         /****************** ***** ADMIN ROUTES ******** ******************/}
-        <Level3 path="/level3" component={Level3Component} />
+        <Level3 path="/level3" component={CompanyHome} />
+
         {/*****************************************************************/
-        /*****************************************************************/
         /*************** ***** SUPER ADMIN ROUTES ******** ***************/}
-        <Level4 path="/level4" component={Level4Component} />
+        <Level4 path="/level4" component={EmployeeHome} />
+
         {/*****************************************************************/
-        /*****************************************************************/
         /***************** ***** NOT FOUND PAGE ******** *****************/}
         <Route component={NotFoundPage} />
+
         {/*****************************************************************/
         /*****************************************************************/}
       </Switch>
