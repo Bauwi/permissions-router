@@ -31,7 +31,7 @@ import ProviderHome from "../components/Provider/Home";
 import CompanyHome from "../components/Company/Home";
 
 //Super Admin components
-// import Level4Component from "../components/Levels/Level4";
+import AdminHome from "../components/Admin/Home";
 
 //Steps
 import StepEmployee0 from "../components/Steps/Step0Employee";
@@ -94,11 +94,11 @@ const AppRouter = () => (
 
         {/*****************************************************************/
         /****************** ***** ADMIN ROUTES ******** ******************/}
-        <Level3 path="/level3" component={CompanyHome} />
+        <Level3 path="/app/company" component={CompanyHome} />
 
         {/*****************************************************************/
         /*************** ***** SUPER ADMIN ROUTES ******** ***************/}
-        <Level4 path="/level4" component={EmployeeHome} />
+        <Level4 path="/app/admin" component={AdminHome} />
 
         {/*****************************************************************/
         /***************** ***** NOT FOUND PAGE ******** *****************/}

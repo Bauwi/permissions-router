@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { withTheme } from "styled-components";
 
-import fakePermissions from "../../mock/fakePermissions";
+import permissions from "../../mock/steps";
 import { startLogout } from "../../actions/auth";
 import StepCounter from "../Steps/StepCounter";
 
@@ -81,7 +81,7 @@ export class HeaderComp extends Component {
 }
 
 const mapStateToProps = state => ({
-  permission: fakePermissions[state.auth.user.level].name
+  permission: permissions[state.auth.user.level].name
 });
 
 const mapDispatchToProps = dispatch => ({

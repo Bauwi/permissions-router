@@ -77,6 +77,14 @@ export class SidebarComp extends Component {
         <NavBar>
           {this.renderSteps()}
           <NavItem
+            to="/app/admin"
+            level={level}
+            shouldBeAuthorized={[4]}
+            isInStep={isInStep}
+          >
+            /app/admin
+          </NavItem>
+          <NavItem
             to="/app/employee/activities/25"
             level={level}
             shouldBeAuthorized={[1, 3, 4]}
@@ -92,6 +100,7 @@ export class SidebarComp extends Component {
           >
             /app/employee/activities/25/practices/12
           </NavItem>
+
           <NavItem to="/login" level={level} shouldBeAuthorized={[]}>
             LoginPage
           </NavItem>

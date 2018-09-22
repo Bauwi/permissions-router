@@ -2,12 +2,12 @@ import React from "react";
 import PermissionRoute from "../PermissionRoute";
 
 // Level0 layout
-import fakePermissions from "../../mock/fakePermissions";
-console.log(fakePermissions[0]);
+import permissions from "../../mock/steps";
+
 export const Level0 = ({ component: Component, ...rest }) => {
   return (
     <PermissionRoute
-      permission={fakePermissions[0]}
+      permission={permissions[0]}
       component={props => <Component {...props} />}
     />
   );
