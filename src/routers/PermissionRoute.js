@@ -1,11 +1,10 @@
 //PrermissionRoute component is used to manage private only pages
-import React, { Fragment } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 import styled from "styled-components";
 
-import Sidebar from "../components/Sidebar/Sidebar";
-import Header from "../components/Header/Header";
+import RouteWrapper from "../components/User/styled/Main";
 
 import steps from "./permissions/permissions";
 
@@ -27,22 +26,20 @@ export const PermissionRoute = ({
     return <Redirect to={`/steps/${role.name}/${userStep}`} />;
   }
   return (
-    <Route
-      {...rest}
-      component={props =>
-        isAuthorized ? (
-          <Fragment>
-            <Header />
+    <RouteWrapper>
+      <Route
+        {...rest}
+        component={props =>
+          isAuthorized ? (
             <Wrapper>
-              <Sidebar />
               <Component {...props} />
             </Wrapper>
-          </Fragment>
-        ) : (
-          <Redirect to="/" />
-        )
-      }
-    />
+          ) : (
+            <Redirect to="/" />
+          )
+        }
+      />
+    </RouteWrapper>
   );
 };
 

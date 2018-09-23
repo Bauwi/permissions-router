@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 
-import { incrementStep, decrementStep } from "../../actions/auth";
+import { startUpdateUser } from "../../actions/auth";
 
 const Counter = styled.div`
   align-items: center;
@@ -42,12 +42,16 @@ const Button = styled.button`
 
 export class StepCounter extends Component {
   onIncrement = () => {
-    this.props.incrementStep();
+    this.props.startUpdateUser({
+      step: this.props.step + 1
+    });
     this.props.history.push("/");
   };
 
   onDecrement = () => {
-    this.props.decrementStep();
+    this.props.startUpdateUser({
+      step: this.props.step - 1
+    });
     this.props.history.push("/");
   };
 
@@ -67,8 +71,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  incrementStep: () => dispatch(incrementStep()),
-  decrementStep: () => dispatch(decrementStep())
+  startUpdateUser: user => dispatch(startUpdateUser(user))
 });
 
 export default withRouter(

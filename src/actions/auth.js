@@ -8,12 +8,9 @@ export const logout = () => ({
   type: "LOGOUT"
 });
 
-export const incrementStep = () => ({
-  type: "INCREMENT_STEP"
-});
-
-export const decrementStep = () => ({
-  type: "DECREMENT_STEP"
+export const updateUser = updates => ({
+  type: "UPDATE_USER",
+  updates
 });
 
 // Middlewares
@@ -25,4 +22,10 @@ export const startLogin = user => dispatch => {
 export const startLogout = () => dispatch => {
   localStorage.removeItem("user");
   return dispatch(logout());
+};
+
+export const startUpdateUser = updates => (dispatch, getState) => {
+  const newUser = { ...getState().auth.user, updates };
+  localStorage.setItem("user", JSON.stringify(newUser));
+  dispatch(updateUser(updates));
 };

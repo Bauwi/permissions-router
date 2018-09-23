@@ -13,21 +13,22 @@ const Header = styled.header`
   justify-content: space-between;
   background-color: lightgray;
   height: 150px;
-  padding: 20px;
+  padding: 0 20px 0 0;
   color: white;
 `;
 const Permission = styled.p`
   align-items: center;
-  border: 7px solid ${p => p.theme.colors.main};
-  border-radius: 5px;
-  color: ${p => p.theme.colors.main};
+  background: ${p => p.theme.colors.main};
+  color: white;
   display: flex;
-  font-size: ${p => p.theme.title2.fontSize};
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: 900;
   height: 100%;
   justify-content: center;
   flex-basis: 25%;
   text-transform: uppercase;
-  opacity: 0.5;
+  min-width: calc(30vw - 10px);
 `;
 
 const CounterContainer = styled.div`
@@ -66,7 +67,8 @@ const Button = styled.button`
 `;
 export class HeaderComp extends Component {
   render() {
-    const { permission, startLogout } = this.props;
+    const { permission, startLogout, isAuthenticated } = this.props;
+    if (!isAuthenticated) return null;
     return (
       <Header>
         <Permission>{permission}</Permission>
@@ -81,7 +83,10 @@ export class HeaderComp extends Component {
 }
 
 const mapStateToProps = state => ({
-  permission: permissions[state.auth.user.level].name
+  permission: permissions[state.auth.user.level]
+    ? permissions[state.auth.user.level].name
+    : "",
+  isAuthenticated: !!state.auth.user.nom
 });
 
 const mapDispatchToProps = dispatch => ({

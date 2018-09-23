@@ -10,6 +10,14 @@ export default (state = initialState, action) => {
       };
     case "LOGOUT":
       return initialState;
+    case "UPDATE_USER":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          ...action.updates
+        }
+      };
     case "INCREMENT_STEP":
       return {
         ...state,

@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { withTheme } from "styled-components";
 
+import { slide } from "../../routers/transitions";
+
+import Button from "../User/styled/Button";
+
 import { startLogin } from "../../actions/auth";
 
 const FormContainer = styled.div`
@@ -88,7 +92,18 @@ export class Login extends Component {
               />
             </label>
           </Inputs>
-          <button onClick={this.onSubmit}>Submit</button>
+          <Button onClick={this.onSubmit}>Submit</Button>
+          <p className="App-intro">THIS IS HOME !</p>
+          <Button
+            onClick={() =>
+              this.props.history.push({
+                pathname: "/",
+                state: slide
+              })
+            }
+          >
+            back to /
+          </Button>
         </Form>
       </FormContainer>
     );

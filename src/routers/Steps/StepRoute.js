@@ -6,8 +6,6 @@ import styled from "styled-components";
 
 import steps from "../permissions/permissions";
 
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Header from "../../components/Header/Header";
 const Wrapper = styled.div`
   display: flex;
 `;
@@ -39,9 +37,7 @@ export const StepRoute = ({
       component={props =>
         isExpectedStep ? (
           <Fragment>
-            <Header />
             <Wrapper>
-              <Sidebar />
               <Component {...props} />
             </Wrapper>
           </Fragment>
